@@ -969,6 +969,7 @@ class EngineParagraphBuilder implements ui.ParagraphBuilder {
   /// [EngineParagraph].
   EngineParagraphBuilder(EngineParagraphStyle style) : _paragraphStyle = style {
     // TODO(b/128317744): Implement support for strut font families.
+    _placeholderCount = 0;
     List<String> strutFontFamilies;
     if (style._strutStyle != null) {
       strutFontFamilies = <String>[];
@@ -993,7 +994,7 @@ class EngineParagraphBuilder implements ui.ParagraphBuilder {
 
   @override
   int get placeholderCount => _placeholderCount;
-  int _placeholderCount;
+  int _placeholderCount = 0;
 
   @override
   List<double> get placeholderScales => _placeholderScales;
